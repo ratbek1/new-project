@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Flags</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Dogs</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./img/user.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Babylonica&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -18,30 +15,25 @@
     <div class="container">
         <div class="header  d-flex align-items-center justify-content-between">
             <div class="header-select">
-                <select class="select-sort">
-                    <option value="area">Area</option>
-                    <option value="population">population</option>
-                    <option value="A-Z">A-Z</option>
-                    <option value="Z-A">Z-A</option>
-                </select>
 
-                <select class="select-reg">
-                    <option value="europe">Europe</option>
-                    <option value="africa">Africa</option>
-                    <option value="asia">Asia</option>
-                    <option value="oceania">Oceania</option>
-                </select>
+               <select class="select-dog">
+
+               </select>
+
             </div>
             <div class="d-flex">
+
                 <input type="text" class="search-input form-control mx-2">
-                <button class="search-btn btn btn-success">search</button>
+                <button class="search-btn btn btn-danger">Search</button>
+
             </div>
             <div class="nav">
+                <a href="index.html">Home</a>
                 <a href="user.html">Users</a>
-                <a href="dog.html">Dog</a>
             </div>
         </div>
     </div>
+
 </header>
 
 <div id="row">
@@ -53,11 +45,20 @@
 </div>
 
 
+<section>
+    <div class="container">
+
+        <div class="breeds"></div>
+        <div class="breed-img"></div>
+
+    </div>
+</section>
 
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-<script src="script.js"></script>
+<script src="dog.js"></script>
+
 </body>
 </html>
