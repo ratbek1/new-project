@@ -4,52 +4,50 @@ const btn = document.querySelector(".search-btn")
 const select = document.querySelector(".select-dog")
 const input = document.querySelector(".search-input")
 
+
 function fetchAll(){
     axios.get(`https://dog.ceo/api/breeds/list/all`)
-        .then((res) => {
-            Object.keys(res.data.message).map((el) => {
+        .then((res)=> {
+            Object.keys(res.data.message).map(el => {
                 // breeds.innerHTML += `<button class="breed-btn btn btn-primary m-1">${el}</button>`
+                select.innerHTML += `<option value="${el}">${el}</option>`
             })
-            Object.keys(res.data.message).map((el)=> {
-                select.innerHTML += `<option class="text-white bg-black" value="${el}">${el}</option>`
-            })
+
         })
         .then(() => getBtn())
 }
-select.addEventListener("change", (e) => {
-     fetchImg(e.target.value)
-})
-
-btn.addEventListener("click",() => {
-    fetchImg(`${input.value}`)
-})
-
-input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter"){
-        fetchImg(e.target.value)
-    }
-})
-
-input.addEventListener("input", (e)=> {
-    fetchImg(e.target.value)
-})
-
 fetchAll()
 
 function getBtn(){
     const buttons = document.querySelectorAll(".breed-btn")
     buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click",() => {
             fetchImg(btn.innerHTML)
         })
     })
 }
+
 function fetchImg(API){
     axios(`https://dog.ceo/api/breed/${API}/images/random`)
-        .then((res) => {
+        .then(res => {
             breedsImg.innerHTML = `<img src="${res.data.message}" alt="" class="card" style="width: auto;margin: 0 auto">`
         })
 }
 
+btn.addEventListener("click", () => {
+    fetchImg(`${input.value}`)
+})
 
+select.addEventListener("change", (e) => {
+    fetchImg(e.target.value)
+})
 
+input.addEventListener("keydown",(e) => {
+    if (e.key === "Enter"){
+        fetchImg(e.target.value)
+    }
+})
+
+input.addEventListener("input",(e) => {
+    fetchImg(e.target.value)
+})
