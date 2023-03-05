@@ -35,19 +35,19 @@ function fetchImg(API){
 }
 
 btn.addEventListener("click", () => {
-    fetchImg(`${input.value}`)
+    fetchImg(`${input.value.trim()}`)
 })
 
 select.addEventListener("change", (e) => {
-    fetchImg(e.target.value)
+    fetchImg(e.target.value.trim())
 })
 
 input.addEventListener("keydown",(e) => {
     if (e.key === "Enter"){
-        fetchImg(e.target.value)
+        fetchImg(e.target.value.trim())
     }
 })
 
-input.addEventListener("input",(e) => {
-    fetchImg(e.target.value)
-})
+// input.addEventListener("input",(e) => {
+//     fetchImg(e.target.value.trim())
+// })
